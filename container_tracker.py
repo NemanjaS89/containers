@@ -37,8 +37,5 @@ for i in range(sheet.nrows):
     worksheet.write(row, col + 1, status.text)
     worksheet.write(row, col + 2, date.text)
     row += 1
-    
-    print(status.text)
-    print(date.text)
 
 workbook.close()
