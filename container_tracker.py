@@ -3,22 +3,24 @@ import xlrd
 import xlsxwriter
 from bs4 import BeautifulSoup
 
+#initiating the new xlsx
 workbook = xlsxwriter.Workbook('containers_generated.xlsx')
 worksheet = workbook.add_worksheet()
 row = 0
 col = 0
 
-
+#opening the entry xlsx
 loc = "containers.xlsx"
 wb = xlrd.open_workbook(loc)
 sheet = wb.sheet_by_index(0)
 sheet.cell_value(0, 0)
         
-
+#initiating the browser
 browser = webdriver.Chrome("resources/chromedriver.exe")
 browser.get("http://www.ictsi.hr/index.php/en/containers-tracking?fbclid=IwAR3S7tlXrquu090GqzSkA6qKPD86IBi6ThgW84FTwK2lAn-MJwiq9QPXoL4")
 
-
+#looping through the entry xlsx, extracting 
+#the data from the website and writing to the new xlsx
 for i in range(sheet.nrows):
     sheet.cell_value(i, 0)
     
