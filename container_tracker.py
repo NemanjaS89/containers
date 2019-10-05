@@ -22,7 +22,6 @@ browser.get("http://www.ictsi.hr/index.php/en/containers-tracking?fbclid=IwAR3S7
 #looping through the entry xlsx, extracting 
 #the data from the website and writing to the new xlsx
 for i in range(sheet.nrows):
-    sheet.cell_value(i, 0)
     
     text_field = browser.find_element_by_name("unit")
 
